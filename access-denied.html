@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Restricted — Pevolution</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-glow"></div>
+                <span class="logo-text">PEVOLUTION</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="access-denied">
+        <div class="container">
+            <div class="denied-card">
+                <div class="denied-icon">
+                    <div class="icon-ring"></div>
+                    <div class="icon-cross">✕</div>
+                </div>
+                <h1 class="denied-title">Access Restricted</h1>
+                <p class="denied-message">
+                    This endpoint is for private script delivery only. 
+                    Direct browser access is not permitted.
+                </p>
+                <div class="denied-code">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span>api/script — Private Endpoint</span>
+                    </div>
+                    <pre><code>loadstring(game:HttpGet("https://pevolution.vercel.app/api/script", true))()</code></pre>
+                </div>
+                <div class="denied-actions">
+                    <a href="index.html" class="btn-primary">
+                        Return Home
+                    </a>
+                    <a href="scripts.html" class="btn-secondary">
+                        View Scripts
+                    </a>
+                </div>
+                <p class="denied-note">
+                    Use the loader in your Roblox executor to access private scripts.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/protect.js"></script>
+</body>
+</html>

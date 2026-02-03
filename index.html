@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pevolutio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <!-- <div class="logo-glow"></div> -->
+                <span class="logo-text"> - Pevolution - </span>
+            </div>
+            <div class="nav-menu">
+            <a href="index.html" class="nav-link active">
+                <i class="fa-solid fa-house nav-icon"></i>
+                Home
+            </a>
+
+            <a href="scripts.html" class="nav-link">
+                <i class="fa-solid fa-code nav-icon"></i>
+                Scripts
+            </a>
+
+            <a href="https://discord.gg/yourinvite" target="_blank" class="nav-link">
+                <i class="fa-brands fa-discord nav-icon"></i>
+                Discord
+            </a>
+        </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="tagline">
+                        <span class="tag-badge">PRIVATE</span>
+                        <span class="tag-line"></span>
+                        <span class="tag-text">SCRIPT HUB</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Pevolution<br>
+                        <span class="gradient-text">Private Scripts</span>
+                    </h1>
+                    <p class="hero-description">
+                        Personal script collection with protected delivery. 
+                        All scripts are securely hosted and accessible only through authorized loaders.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="scripts.html" class="btn-primary">
+                            <span>View Scripts</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="#stats" class="btn-secondary">
+                            View Stats
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="dot red"></div>
+                                <div class="dot yellow"></div>
+                                <div class="dot green"></div>
+                            </div>
+                            <div class="terminal-title">pevolution_loader.lua</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="code-line">
+                                <span class="code-comment">-- Pevolution Private Loader</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-keyword">local</span> 
+                                <span class="code-var">endpoint</span> = 
+                                <span class="code-string">"https://pevolution.vercel.app/api/script"</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-keyword">local</span> 
+                                <span class="code-function">loader</span> = 
+                                <span class="code-function">function</span>()
+                            </div>
+                            <div class="code-line">
+                                <span class="code-indent">return</span> 
+                                <span class="code-function">loadstring</span>(
+                            </div>
+                            <div class="code-line">
+                                <span class="code-indent-2"><span class="code-function">game</span>:<span class="code-function">HttpGet</span>(endpoint, </span>
+                                <span class="code-boolean">true</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-indent">)()</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-keyword">end</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-keyword">if</span> 
+                                <span class="code-function">pcall</span>(loader) 
+                                <span class="code-keyword">then</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-indent"><span class="code-function">print</span>(<span class="code-string">"[Pevolution] Script loaded"</span>)</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-keyword">end</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalScripts">3</div>
+                    <div class="stat-label">Private Scripts</div>
+                    <div class="stat-bar">
+                        <div class="bar-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalExecutions">0</div>
+                    <div class="stat-label">Total Executions</div>
+                    <div class="stat-bar">
+                        <div class="bar-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="webVisitors">0</div>
+                    <div class="stat-label">Web Visitors</div>
+                    <div class="stat-bar">
+                        <div class="bar-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="uptime">100%</div>
+                    <div class="stat-label">System Uptime</div>
+                    <div class="stat-bar">
+                        <div class="bar-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Analytics -->
+    <section class="charts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-accent">Website</span> Analytics
+                </h2>
+                <p class="section-subtitle">
+                    Real-time tracking of website visitors and script usage
+                </p>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Daily Visitors</h3>
+                        <div class="chart-period">Last 7 days</div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="visitorsChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Execution Requests</h3>
+                        <div class="chart-period">Last 24 hours</div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="requestsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="features-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-accent">Private</span> Script Hub
+                </h2>
+                <p class="section-subtitle">
+                    Personal script collection with secure access control
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-box">1</div>
+                    </div>
+                    <h3 class="feature-title">Private Collection</h3>
+                    <p class="feature-desc">
+                        Personal scripts for private use only. Not a public service.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-box">2</div>
+                    </div>
+                    <h3 class="feature-title">Direct Access</h3>
+                    <p class="feature-desc">
+                        Scripts delivered directly without intermediaries or third-parties.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-box">3</div>
+                    </div>
+                    <h3 class="feature-title">Protected Endpoints</h3>
+                    <p class="feature-desc">
+                        API endpoints secured against unauthorized access and scraping.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <div class="icon-box">4</div>
+                    </div>
+                    <h3 class="feature-title">Usage Tracking</h3>
+                    <p class="feature-desc">
+                        Basic analytics to track script usage and website visitors.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2 class="cta-title">Access Private Scripts</h2>
+                    <p class="cta-desc">
+                        Copy the loader from any script page and execute in your Roblox client.
+                        All scripts are private and for personal use only.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="scripts.html" class="btn-primary btn-large">
+                            <span>Browse Scripts</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="https://discord.gg/pevolution" target="_blank" class="btn-secondary btn-large">
+                            Discord Support
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-visual">
+                    <div class="shield-graphic">
+                        <div class="shield-ring ring-1"></div>
+                        <div class="shield-ring ring-2"></div>
+                        <div class="shield-ring ring-3"></div>
+                        <div class="shield-core">
+                            <div class="core-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-glow small"></div>
+                    <span class="logo-text">Pevolution</span>
+                    <p class="footer-tagline">
+                        Private script collection hub
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">Hub</h4>
+                        <a href="index.html" class="link-item">Home</a>
+                        <a href="scripts.html" class="link-item">Scripts</a>
+                        <a href="#about" class="link-item">About</a>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Support</h4>
+                        <a href="https://discord.gg/pevolution" target="_blank" class="link-item">Discord</a>
+                        <a href="#" class="link-item">API Status</a>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Legal</h4>
+                        <a href="#" class="link-item">Privacy</a>
+                        <a href="#" class="link-item">Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2022 Pevolution. Private script collection.</p>
+                <div class="footer-meta">
+                    <span class="meta-item" id="serverStatus">🟢 System Online</span>
+                    <span class="meta-item">•</span>
+                    <span class="meta-item" id="liveVisitors">0 visitors online</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/protect.js"></script>
+</body>
+</html>

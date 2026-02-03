@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scripts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <!-- <div class="logo-glow"></div> -->
+                <span class="logo-text"> - Pevolution - </span>
+            </div>
+            <div class="nav-menu">
+            <a href="index.html" class="nav-link">
+                <i class="fa-solid fa-house nav-icon"></i>
+                Home
+            </a>
+
+            <a href="scripts.html" class="nav-link active">
+                <i class="fa-solid fa-code nav-icon"></i>
+                Scripts
+            </a>
+
+            <a href="https://discord.gg/yourinvite" target="_blank" class="nav-link">
+                <i class="fa-brands fa-discord nav-icon"></i>
+                Discord
+            </a>
+        </div>
+
+                <!-- <a href="#" class="nav-btn" id="getKey">
+                    <span class="btn-icon">⚷</span>
+                    Get Key
+                </a> -->
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Scripts Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">Script Library</h1>
+                <p class="page-subtitle">
+                    Protected scripts with encrypted delivery. Copy the loader and execute in your executor.
+                </p>
+                
+                <!-- Search and Filter -->
+                <div class="controls-bar">
+                    <div class="search-container">
+                        <div class="search-icon">⌕</div>
+                        <input type="text" 
+                               id="scriptSearch" 
+                               class="search-input" 
+                               placeholder="Search scripts by name or game...">
+                    </div>
+                    <div class="filter-container">
+                        <select id="scriptFilter" class="filter-select">
+                            <option value="all">All Scripts</option>
+                            <option value="free">Free</option>
+                            <option value="premium">Premium</option>
+                            <option value="game">By Game</option>
+                        </select>
+                        <div class="sort-container">
+                            <span class="sort-label">Sort by:</span>
+                            <select id="scriptSort" class="sort-select">
+                                <option value="popular">Most Popular</option>
+                                <option value="newest">Newest</option>
+                                <option value="updated">Recently Updated</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts Grid -->
+    <main class="scripts-main">
+        <div class="container">
+            <div class="scripts-grid" id="scriptsGrid">
+                <!-- Script cards will be loaded here -->
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="loading-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p>Loading protected scripts...</p>
+            </div>
+            
+            <!-- No Results -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">▤</div>
+                <h3>No scripts found</h3>
+                <p>Try adjusting your search or filter</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loader Modal -->
+    <div class="modal" id="loaderModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 class="modal-title">Copy Protected Loader</h3>
+                <button class="modal-close" id="closeLoaderModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="script-info">
+                    <div class="script-icon" id="modalScriptIcon">A</div>
+                    <div class="script-details">
+                        <h4 id="modalScriptTitle">Script Name</h4>
+                        <div class="script-meta">
+                            <span class="meta-badge" id="modalScriptGame">Game</span>
+                            <span class="meta-badge version" id="modalScriptVersion">v1.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <div class="code-title">Protected Loader</div>
+                        <button class="btn-copy" id="copyLoaderBtn">
+                            <span>Copy</span>
+                        </button>
+                    </div>
+                    <pre class="code-content" id="loaderCode">
+loadstring(game:HttpGet("https://nexus-protect.vercel.app/api/script", true))()
+                    </pre>
+                    <div class="code-footer">
+                        <div class="usage-tip">
+                            <div class="tip-icon">ⓘ</div>
+                            <p>This loader contains hidden scripts. Paste directly into your executor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="executeTestBtn">
+                        Test Connection
+                    </button>
+                    <a href="https://discord.gg/yourinvite" target="_blank" class="btn-outline">
+                        Get Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-glow small"></div>
+                    <span class="logo-text">Pevolution</span>
+                    <p class="footer-tagline">
+                        Advanced script protection and delivery system
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">System</h4>
+                        <a href="index.html" class="link-item">Home</a>
+                        <a href="scripts.html" class="link-item">Scripts</a>
+                        <a href="#" class="link-item">How It Works</a>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Resources</h4>
+                        <a href="https://discord.gg/yourinvite" target="_blank" class="link-item">Discord</a>
+                        <a href="#" class="link-item">Documentation</a>
+                        <a href="#" class="link-item">API Reference</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2022 Pevolution Protection System. All rights reserved.</p>
+                <div class="footer-meta">
+                    <span class="meta-item" id="scriptCount">Loading scripts...</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/protect.js"></script>
+</body>
+</html>
