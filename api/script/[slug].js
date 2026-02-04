@@ -18,7 +18,7 @@ module.exports = function handler(req, res) {
 
       "aquamatrix":
         "print('[Pevolution] AquaMatrix Loaded')\n" +
-        "-- SCRIPT AQUAMATRIX ASLI DI SINI\n",
+        "loadstring(game:HttpGet("https://raw.githubusercontent.com/yunus154524/scripts/refs/heads/main/anim2gui.lua"))()\n",
 
       "spear-fishing":
         "print('[Pevolution] Spear Fishing Loaded')\n" +
