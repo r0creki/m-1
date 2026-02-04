@@ -25,9 +25,6 @@ const scriptsData = [
         status: 'active',
         type: 'private',
         icon: 'FE',
-        hiddenScripts: [
-            'https://raw.githubusercontent.com/ExploitFin/AquaMatrix/refs/heads/AquaMatrix/AquaMatrix'
-        ],
         features: ['Aimbot', 'ESP', 'Speed', 'Hitbox']
     },
     {
@@ -40,9 +37,6 @@ const scriptsData = [
         status: 'active',
         type: 'private',
         icon: 'JO',
-        hiddenScripts: [
-            'https://pastebin.com/raw/H5PfZB5y'
-        ],
         features: ['FE', 'Trolling']
     },
     {
@@ -55,10 +49,6 @@ const scriptsData = [
         status: 'non-active',
         type: 'private',
         icon: 'img/centaura.png',
-        hiddenScripts: [
-            'https://example.com/utility-script-1',
-            'https://example.com/utility-script-2'
-        ],
         features: ['Aimbot', 'ESP', 'Speed', 'Hitbox']
     },
 ];
@@ -308,7 +298,7 @@ function showScriptModal(script) {
     
     // Generate loader code
     if (loaderCode) {
-        const loader = `loadstring(game:HttpGet("https://pevolution.vercel.app/api/script", true))()`;
+        const loader = `loadstring(game:HttpGet("https://pevolution.vercel.app/api/script/${script.id}", true))()`;
         loaderCode.textContent = loader;
     }
     
