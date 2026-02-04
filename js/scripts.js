@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Script data - Pevolution Private Collection
 const scriptsData = [
     {
-        id: 'aquamatrix',
+        id: 'animtroll',
         title: 'FE Animation Troll',
         game: 'Multiple Games',
         description: 'For trolling',
