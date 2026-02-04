@@ -1,40 +1,42 @@
 export default function handler(req, res) {
-  res.setHeader("Content-Type", "text/plain");
+  try {
+    res.setHeader("Content-Type", "text/plain");
 
-  const { slug } = req.query;
+    const slug = Array.isArray(req.query.slug)
+      ? req.query.slug[0]
+      : req.query.slug;
 
-  if (!slug) {
-    res.status(404).send("-- invalid endpoint");
-    return;
+    if (!slug) {
+      res.status(404).send("-- invalid endpoint");
+      return;
+    }
+
+    const scripts = {
+      "centaura":
+        "print('[Pevolution] Centaura Loaded')\n" +
+        "-- SCRIPT CENTAURA ASLI DI SINI\n",
+
+      "aquamatrix":
+        "print('[Pevolution] AquaMatrix Loaded')\n" +
+        "-- SCRIPT AQUAMATRIX ASLI DI SINI\n",
+
+      "spear-fishing":
+        "print('[Pevolution] Spear Fishing Loaded')\n" +
+        "-- SCRIPT SPEAR FISHING ASLI DI SINI\n",
+    };
+
+    if (!scripts[slug]) {
+      res.status(404).send("-- unknown script");
+      return;
+    }
+
+    const output =
+      "-- Pevolution Private Script\n" +
+      "if not game:IsLoaded() then game.Loaded:Wait() end\n\n" +
+      scripts[slug];
+
+    res.status(200).send(output);
+  } catch (err) {
+    res.status(500).send("-- server error");
   }
-
-  const scripts = {
-print("[Pevolution] Centaura Loaded")
--- SCRIPT CENTAURA ASLI DI SINI
-`,
-
-    "aquamatrix": `
-print("[Pevolution] AquaMatrix Loaded")
--- SCRIPT AQUAMATRIX ASLI DI SINI
-`,
-
-    "spear-fishing": `
-print("[Pevolution] Spear Fishing Loaded")
--- SCRIPT SPEAR FISHING ASLI DI SINI
-`,
-  };
-
-  if (!scripts[slug]) {
-    res.status(404).send("-- unknown script");
-    return;
-  }
-
-  const output =
-`-- Pevolution Private Script
-if not game:IsLoaded() then game.Loaded:Wait() end
-
-${scripts[slug]}
-`;
-
-  res.status(200).send(output);
 }
