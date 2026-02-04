@@ -14,7 +14,7 @@ module.exports = function handler(req, res) {
     const scripts = {
       "centaura":
         "print('[Pevolution] Centaura Loaded')\n" +
-        "-- SCRIPT CENTAURA ASLI DI SINI\n",
+        "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
 
       "aquamatrix":
         "print('[Pevolution] AquaMatrix Loaded')\n" +
