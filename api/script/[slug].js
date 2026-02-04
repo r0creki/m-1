@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   try {
     res.setHeader("Content-Type", "text/plain");
 
@@ -39,4 +39,4 @@ export default function handler(req, res) {
   } catch (err) {
     res.status(500).send("-- server error");
   }
-}
+};
