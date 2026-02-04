@@ -14,11 +14,11 @@ module.exports = function handler(req, res) {
     const scripts = {
       "centaura":
         "print('[Pevolution] Centaura Loaded')\n" +
-        "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",
+        "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source', true))()\n",
 
       "aquamatrix":
         "print('[Pevolution] AquaMatrix Loaded')\n" +
-        "https://raw.githubusercontent.com/yunus154524/scripts/refs/heads/main/anim2gui.lua",
+        "loadstring(game:HttpGet('https://raw.githubusercontent.com/yunus154524/scripts/refs/heads/main/anim2gui.lua', true))()\n",
 
       "spear-fishing":
         "print('[Pevolution] Spear Fishing Loaded')\n" +
