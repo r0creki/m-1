@@ -28,6 +28,18 @@ const scriptsData = [
         features: ['Aimbot', 'ESP', 'Speed', 'Hitbox']
     },
     {
+        id: 'webhook1',
+        title: 'Balls',
+        game: 'Multiple Games',
+        description: 'Suspicious script for trolling.',
+        uses: 0,
+        version: 'v1.0.0',
+        status: 'active',
+        type: 'private',
+        icon: 'JO',
+        features: ['FE', 'Trolling']
+    },
+    {
         id: 'animation',
         title: 'Jerk Off',
         game: 'Multiple Games',
@@ -348,3 +360,4 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
